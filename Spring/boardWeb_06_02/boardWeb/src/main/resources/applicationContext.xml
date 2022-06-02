@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Beans : 스프링에서 객체를 관리하는 컨테이너
+	결합도는 느슨하게 한다. : 유지 보수를 쉽게 한다. 
+		- interface, Factory 디자인 패턴 (객체를 코드에서 생성하지 않고
+			외부파일(BeanFactory)에서 객체를 생성, 의존성 주입(DI) ) 
+		- 스프링에서는 객체 생성을 스프링 컨테이너에서 생성 (Bean 컨테이너)
+   -->
+   
+   <!--  새로운 기능의 객체의 수정이 일어 났을때 bean 설정만 셋팅. 
+  	<bean id="tv" class="polymorphism_3_1_2.SamsungTV" ></bean>
+   -->
+    <!-- 예제 3_1_2  
+   <bean id="tv" class="polymorphism_3_1_2.SamsungTV" ></bean>
+     --> 
+   <!--  bean 에서 id 가 생략 된 경우 : 객체이름 (첫자가 소문자로 처리) 
+   <bean id= "samsungTV" class="polymorphism_3_1_2.SamsungTV" ></bean>
+   -->
+   <!-- init-method : 객체 생성후 호출되는 메소드 , 
+   		destroy-method : 객체 제거되기전 호출되는 메소드  
+   <bean id="tv" class="polymorphism_3_2_4.SamsungTV" init-method = "initMethod" 
+   			destroy-method ="destroyMethod" />
+    -->
+    
+    <!--Spring bean 컨테이너에서 객체로딩 방식은 pre-loading 방식 (메모리에 즉시 로딩) 
+    	lazy-init = "true" : 요청이 있을때 메모리에 로딩 하는 방식 (메모리 낭비를 줄여줌)
+       
+      <bean id="tv" class="polymorphism_3_2_4.SamsungTV" lazy-init = "true" />
+    -->
+    
+    <!-- scope="singleton" : 단 하나의 객체만 생성해서 사용 하도록 설정  
+    <bean id="tv" class="polymorphism_3_2_4.SamsungTV" scope = "singleton" />
+    -->
+    
+    <!--  scope = "prototype" : 매번 새로운 객체를 생성하도록 설정 
+    <bean id="tv" class="polymorphism_3_2_4.SamsungTV" scope = "prototype" />
+     -->
+   
+   <!--  매개 변수가 있는 생성자 호출(매개변수 1개)  
+   		ref : 객체 타입을 매개변수로 가질때 
+   		value : 기본 타입을 매개변수로 가질때
+   
+   <bean id="tv" class="polymorphism_4_2.SamsungTV" >
+   		<constructor-arg  ref= "sony"></constructor-arg>
+   </bean>
+   <bean id = "sony" class = "polymorphism_4_2.SonySpeaker" > </bean>
+     -->
+     
+     <!--  생성자의 매개변수가 2개인 생성자 호출  
+   <bean id="tv" class="polymorphism_4_2_1.SamsungTV" >
+   		<constructor-arg  ref= "sony"></constructor-arg>
+   		<constructor-arg value= "2700000"></constructor-arg>
+   </bean>
+   <bean id = "sony" class = "polymorphism_4_2_1.SonySpeaker" > </bean>
+    --> 
+    
+  <!-- SonySpeaker ==> AppleSpeaker로 변경  
+  <bean id="tv" class="polymorphism_4_2_2.SamsungTV" >
+   		<constructor-arg  ref= "sony"></constructor-arg>
+   		<constructor-arg value= "2700000"></constructor-arg>
+   </bean>
+   <bean id = "sony" class = "polymorphism_4_2_2.SonySpeaker" > </bean>
+    
+     
+     
+     <bean id="tv" class="polymorphism_4_2_2.SamsungTV" >
+   		<constructor-arg  ref= "apple"></constructor-arg>
+   		<constructor-arg value= "2700000"></constructor-arg>
+   </bean>
+   <bean id = "apple" class = "polymorphism_4_2_2.AppleSpeaker" > </bean>  
+      --> 
+      
+      
+  <!-- setter 호출 : property - 엘리멘트 사용
+  		property name = speaker     <== setSpeaker() 호출 
+  		property name = price		<== setPrice() 호출 
+     
+    <bean id="tv" class="polymorphism_4_3_1.SamsungTV" >
+   	    <property name = "speaker" ref="apple"></property>
+   	    <property name = "price" value = "2700000"></property>
+   </bean>
+   <bean id = "apple" class = "polymorphism_4_3_1.AppleSpeaker" > </bean>  
+       
+        
+        
+   <bean id="tv" class="polymorphism_4_3_1.SamsungTV" >
+   	    <property name = "speaker" ref="sony"></property>
+   	    <property name = "price" value = "2700000"></property>
+   </bean>
+   <bean id = "sony" class = "polymorphism_4_3_1.SonySpeaker" > </bean> 
+   
+    -->
+    
+	<!--  p 네임 스페이스를 이용한 setter 호출 --> 
+  <bean id="tv" class= "polymorphism_4_3_2.SamsungTV" 
+  		p:speaker-ref = "apple" p:price="3000000" />
+  <bean id ="sony" class= "polymorphism_4_3_2.SonySpeaker" />
+  <bean id ="apple" class = "polymorphism_4_3_2.AppleSpeaker" />
+    
+    
+    
+   
+</beans>
