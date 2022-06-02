@@ -1,14 +1,17 @@
 package polymorphism_2_3_2;
 
 public interface TV {
-	public void powerOn();
+	/*
+	  	ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÏ¸é ¸Þ¼Òµå ÀÌ¸§À» µ¿ÀÏÇÏ°Ô »ç¿ëÇØ¼­ À¯Áö º¸¼ö¸¦ ½±°Ô ÇÒ ¼ö ÀÖ´Ù.
+	  	°áÇÕµµ¸¦ ³·Ãß´Â ¿©·¯ ¹æ¹ý Áß ÇÏ³ª
+	  	ÀÎÅÍÆäÀÌ½ºÀÇ ¸Þ¼Òµå¸¦ ¿À¹ö¶óÀÌµùÇØ¼­ °áÇÕµµ¸¦ ³·Ãá´Ù.
+	 */
+	
+	//¸Þ¼Òµå ¼±¾ð¸¸ µÇ¾î ÀÖ°í ±¸ÇöºÎ°¡ ¾ø´Ù(Ãß»ó¸Þ¼Òµå)
+	public abstract void powerOn();
 	public void powerOff();
 	public void volumeUp();
 	public void volumeDown();
-	/* ì¸í„°íŽ˜ì´ìŠ¤ë¥¼ ì‚¬ìš©í•˜ë©´ ë©”ì†Œë“œ ì´ë¦„ì„ ë™ì¼í•˜ê²Œ ì‚¬ìš©í•´ì„œ ìœ ì§€ë³´ìˆ˜ë¥¼ ì‰½ê²Œ
-	 * í• ìˆ˜ ìžˆë‹¤. ( ê²°í•©ë„ë¥¼ ë‚®ì¶˜ë‹¤. )
-	 * ê²°í•©ë„ëŠ” ë‚®ì¶”ëŠ” ì—¬ëŸ¬ ë°©ë²•ì¤‘ì˜ í•˜ë‚˜. 
-	 *   - ì¸í„°íŽ˜ì´ìŠ¤ì˜ ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë”©ì„ í†µí•´ ê²°í•©ë„ë¥¼ ë‚®ì¶˜ë‹¤. 
-	 */
-
+	
 }
+

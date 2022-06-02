@@ -3,16 +3,16 @@ package polymorphism_2_3_1;
 public class LgTV {
 	
 	public void turnOn() {
-		System.out.println("LgTV  -- ì „ì›ì„ ì¼ ë‹¤.");
+		System.out.println("LgTV -- Àü¿øÀ» ÄÒ´Ù.");
 	}
 	public void turnOff() {
-		System.out.println("LgTV  -- ì „ì›ì„ ëˆë‹¤.");
+		System.out.println("LgTV -- Àü¿øÀ» ²ö´Ù.");
 	}
 	public void soundUp() {
-		System.out.println("LgTV  -- ì†Œë¦¬ë¥¼ ì˜¬ë¦°ë‹¤.");
+		System.out.println("LgTV -- ¼Ò¸®¸¦ ¿Ã¸°´Ù.");
 	}
 	public void soundDown() {
-		System.out.println("LgTV  -- ì†Œë¦¬ë¥¼ ë‚´ë¦°ë‹¤.");
+		System.out.println("LgTV -- ¼Ò¸®¸¦ ³»¸°´Ù.");
 	}
-
+	
 }

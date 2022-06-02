@@ -3,16 +3,16 @@ package polymorphism_2_3_1;
 public class SamsungTV {
 	
 	public void powerOn() {
-		System.out.println("SamsungTV -- ì „ì›ì„ ì¼ ë‹¤.");
-	}	
+		System.out.println("SamsungTV -- Àü¿øÀ» ÄÒ´Ù.");
+	}
 	public void powerOff() {
-		System.out.println("SamsungTV -- ì „ì›ì„ ëˆë‹¤.");
-	}	
+		System.out.println("SamsungTV -- Àü¿øÀ» ²ö´Ù.");
+	}
 	public void volumeUp() {
-		System.out.println("SamsungTV -- ì†Œë¦¬ë¥¼ ì˜¬ë¦°ë‹¤.");
+		System.out.println("SamsungTV -- ¼Ò¸®¸¦ ¿Ã¸°´Ù.");
 	}
 	public void volumeDown() {
-		System.out.println("SamsungTV -- ì†Œë¦¬ë¥¼ ë‚´ë¦°ë‹¤.");
+		System.out.println("SamsungTV -- ¼Ò¸®¸¦ ³»¸°´Ù.");
 	}
-
+	
 }

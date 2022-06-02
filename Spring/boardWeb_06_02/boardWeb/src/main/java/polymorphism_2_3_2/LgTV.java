@@ -1,46 +1,24 @@
 package polymorphism_2_3_2;
 
+
 public class LgTV implements TV{
-
 	
+
+	@Override
 	public void powerOn() {
-		System.out.println("LgTV -- ì „ì›ì„ ì¼ ë‹¤. ");
-		
+		System.out.println("LgTV -- Àü¿øÀ» ÄÒ´Ù.");		
 	}
-
-
+	@Override
 	public void powerOff() {
-		System.out.println("LgTV -- ì „ì›ì„ ëˆë‹¤. ");
-		
+		System.out.println("LgTV -- Àü¿øÀ» ²ö´Ù.");
 	}
-
-
+	@Override
 	public void volumeUp() {
-		System.out.println("LgTV -- ì†Œë¦¬ë¥¼ ì˜¬ë¦°ë‹¤. ");
-		
+		System.out.println("LgTV -- ¼Ò¸®¸¦ ¿Ã¸°´Ù.");
 	}
-
-
+	@Override
 	public void volumeDown() {
-		System.out.println("LgTV -- ì†Œë¦¬ì„ ë‚´ë¦°ë‹¤. ");
-		
+		System.out.println("LgTV -- ¼Ò¸®¸¦ ³»¸°´Ù.");
 	}
 	
-
-	
-	/*
-	public void turnOn() {
-		System.out.println("LgTV  -- ì „ì›ì„ ì¼ ë‹¤.");
-	}
-	public void turnOff() {
-		System.out.println("LgTV  -- ì „ì›ì„ ëˆë‹¤.");
-	}
-	public void soundUp() {
-		System.out.println("LgTV  -- ì†Œë¦¬ë¥¼ ì˜¬ë¦°ë‹¤.");
-	}
-	public void soundDown() {
-		System.out.println("LgTV  -- ì†Œë¦¬ë¥¼ ë‚´ë¦°ë‹¤.");
-	}
-	*/ 
-
 }
